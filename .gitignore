@@ -1,0 +1,29 @@
+# Fichiers systèmes macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icones sur dossiers macOS
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Fichiers temporaires de l'éditeur
+*.swp
+*.swo
+
+# Fichiers backup
+*~
+*.bak
+
+# Fichiers de logs
+*.log
+
+# Archives générées
+*.tar.gz
+*.zip
+
+# Node / autres dépendances si projet futur
+node_modules/
+dist/
