@@ -1,32 +1,89 @@
 # recto-verso-pdf
 
-**recto-verso-pdf** est un script Bash simple qui permet d'intercaler automatiquement deux fichiers PDF scannés — un contenant les pages recto, l'autre contenant les pages verso — pour produire un PDF final en recto-verso.
+Assemble deux fichiers PDF (rectos et versos) pour générer un seul fichier recto-verso, prêt à être imprimé ou archivé.
 
 ---
 
-## 📋 Prérequis
+## Prérequis
 
 - macOS ou Linux
-- [pdftk-java](https://formulae.brew.sh/formula/pdftk-java) installé
-  - Installation rapide sur macOS avec Homebrew :
-    ```bash
-    brew install pdftk-java
-    ```
+- `pdftk-java` installé  
+  ➔ Installez-le via Homebrew (`brew install pdftk-java`) ou votre gestionnaire de paquets (`apt`, etc.).
 
 ---
 
-## 🚀 Utilisation
+## Installation
 
-### 1. Scanner vos documents
-
-- **Étape 1 :** Scannez toutes les pages recto de votre pile en un seul fichier `recto.pdf`.
-- **Étape 2 :** Retournez l'ensemble de la pile (sans changer l'ordre des feuilles).
-- **Étape 3 :** Scannez les versos dans un second fichier `verso.pdf`.
-
-### 2. Lancer le script
-
-Dans le terminal :
+Clonez le projet :
 
 ```bash
-./recto-verso.sh chemin/vers/recto.pdf chemin/vers/verso.pdf
+git clone https://github.com/alxblog/recto-verso-pdf.git
+cd recto-verso-pdf
 ```
+
+### 1. Avec le Makefile (recommandé)
+
+```bash
+sudo make install
+```
+
+### 2. Ou avec le script install.sh
+
+```bash
+sudo bash install.sh
+```
+
+---
+
+## Utilisation
+
+Depuis n'importe où dans votre terminal :
+
+```bash
+recto-verso fichier-recto.pdf fichier-verso.pdf
+```
+
+Cela générera un fichier `output.pdf` combiné.
+
+---
+
+## Désinstallation
+
+### 1. Avec le Makefile
+
+```bash
+sudo make uninstall
+```
+
+### 2. Ou avec le script uninstall.sh
+
+```bash
+sudo bash uninstall.sh
+```
+
+---
+
+## Remarques
+
+- Lors du scan des pages :
+  - Scannez d'abord toutes les pages recto normalement.
+  - Puis retournez la pile sans changer l'ordre pour scanner les versos.
+- Le script attend que les deux fichiers soient dans l'ordre direct.
+
+---
+
+## Développement
+
+Pour tester rapidement une nouvelle version :
+
+```bash
+sudo make reinstall
+```
+
+Cela désinstalle puis réinstalle automatiquement.
+
+---
+
+## Licence
+
+Projet libre sous licence MIT.
